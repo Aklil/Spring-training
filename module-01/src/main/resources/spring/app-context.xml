@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--The spring application context configuration file
+    -Spring reads app config from this file, similar to what we've used in message-support-factory.properties
+    -The Application Context instantiates the class and store it with the specified ID
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="provider" class="getting_started.without.flexible.SimpleMessageProvider"/>
+        <bean id="renderer" class="getting_started.without.flexible.StandardOutMessageRenderer">
+            <property name="messageProvider" ref="provider"/>  <!--Spring Injects messageProvider bean when renderer bean is instantiated-->
+        </bean>
+</beans>
