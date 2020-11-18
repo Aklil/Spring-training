@@ -3,7 +3,7 @@ package services;
 import org.springframework.stereotype.Service;
 
 // this is to demonstrate unique bean naming //default ?? primary ?? its own name??
-@Service
+//@Service
 public class FasikaDiscountService implements DiscountService {
     @Override
     public double calculate(int numberOfItemsBought) {

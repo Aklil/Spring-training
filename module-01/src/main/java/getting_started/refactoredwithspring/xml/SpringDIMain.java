@@ -20,7 +20,7 @@ public class SpringDIMain {
         // No need for factory class
         // Loosely coupled
 
-        ApplicationContext context = new ClassPathXmlApplicationContext("spring/app-context.xml");  //reads configs from spring xml config
+        ApplicationContext context = new ClassPathXmlApplicationContext( "app-context.xml");  //reads configs from spring xml config
 
         // let spring get the object by providing its unique id to it
         MessageRenderer renderer = context.getBean("renderer", MessageRenderer.class);

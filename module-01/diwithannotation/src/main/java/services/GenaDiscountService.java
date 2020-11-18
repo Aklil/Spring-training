@@ -1,13 +1,22 @@
 package services;
 
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 //@Service("genaDiscountService") //TODO primary
+@Component   // spring names this bean as "genaDiscountService" by default . i.e takes the class names and downcasing the first letter
 public class GenaDiscountService implements DiscountService {
+
+    /*@Value("${JAVA_HOME}")  // for property source demo purpose
+    private String javaHomeTest;*/
+
     @Override
     public double calculate(int numberOfItemsBought) {
-       double discount = 0.0;
+        //System.out.println("Java home: " + javaHomeTest);
+
+        double discount = 0.0;
        if(numberOfItemsBought >= 100)
            discount = 0.30;
        else if(numberOfItemsBought >= 50)

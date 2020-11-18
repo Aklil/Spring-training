@@ -20,7 +20,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DiscountServiceTest {
 
     @Autowired
-    @Qualifier("genaDiscountService")
+    //@Qualifier("discountService")
     private DiscountService discountService;
 
     @Test

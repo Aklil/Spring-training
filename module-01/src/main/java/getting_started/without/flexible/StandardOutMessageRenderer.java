@@ -1,6 +1,9 @@
 package getting_started.without.flexible;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class StandardOutMessageRenderer implements MessageRenderer {
+
     private MessageProvider messageProvider;
 
     @Override
