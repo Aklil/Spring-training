@@ -11,13 +11,17 @@ public class SpringBean2 {
         System.out.println(getClass().getSimpleName() + "::constructor");
     }
 
+    // JSR-250
     @PostConstruct
-    public void init() {
+    public void afterInit() {
+
         System.out.println(getClass().getSimpleName() + "::init");
     }
 
     @PreDestroy
-    public void destroy() {
+    public void beforeDestroy() {
+        ///
         System.out.println(getClass().getSimpleName() + "::destroy");
+
     }
 }

@@ -1,6 +1,7 @@
 package services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -10,6 +11,7 @@ import javax.swing.plaf.ActionMapUIResource;
 public class PricingServiceImpl implements PricingService {
 
     @Autowired  // field injection is not recommended
+    @Qualifier("genaDiscountService")
     private DiscountService discountService;
 
     //private final DiscountService discountService;

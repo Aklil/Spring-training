@@ -3,7 +3,8 @@ import org.springframework.context.annotation.ComponentScan;
 
 @ComponentScan
 public class ApplicationConfiguration {
-    @Bean
+
+   /* @Bean
     public static CustomBeanFactoryPostProcessor getCustomBeanFactoryPostProcessor() {
         return new CustomBeanFactoryPostProcessor();
     }
@@ -11,5 +12,5 @@ public class ApplicationConfiguration {
     @Bean
     public static CustomBeanPostProcessor getCustomerBeanPostProcessor() {
         return new CustomBeanPostProcessor();
-    }
+    }*/
 }

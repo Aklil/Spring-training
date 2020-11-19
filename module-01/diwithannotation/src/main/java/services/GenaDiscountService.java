@@ -2,11 +2,12 @@ package services;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
-//@Service("genaDiscountService") //TODO primary
-@Component   // spring names this bean as "genaDiscountService" by default . i.e takes the class names and downcasing the first letter
+@Service("genaService") //TODO primary
+//@Component   // spring names this bean as "genaDiscountService" by default . i.e takes the class names and downcasing the first letter
 public class GenaDiscountService implements DiscountService {
 
     /*@Value("${JAVA_HOME}")  // for property source demo purpose

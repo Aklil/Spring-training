@@ -14,6 +14,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration   //Equivalent to app-context.xml
 public class JavaConfiguration {
 
+    // for @Bean config the default bean name is the method name
     @Bean  // equivalent to <bean id="provider" class="..."/>
     public MessageProvider provider(){
         return new SimpleMessageProvider();
@@ -22,7 +23,7 @@ public class JavaConfiguration {
     @Bean
     public MessageRenderer renderer(){
         MessageRenderer renderer = new StandardOutMessageRenderer();
-        renderer.setMessageProvider(provider());
+        renderer.setMessageProvider(provider());   //
         return renderer;
     }
 }
