@@ -9,6 +9,7 @@
         <module>diwithannotation</module>
         <module>container-lifecycle</module>
         <module>profiles</module>
+        <module>speldemo</module>
     </modules>
 
     <properties>

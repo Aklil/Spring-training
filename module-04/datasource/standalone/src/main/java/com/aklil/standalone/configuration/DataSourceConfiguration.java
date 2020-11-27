@@ -1,8 +1,8 @@
-package com.spring.professional.exam.tutorial.module03.question02.standalone.configuration;
+package com.aklil.standalone.configuration;
 
-import org.apache.commons.dbcp2.BasicDataSource;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.jdbc.datasource.DriverManagerDataSource;
 
 import javax.sql.DataSource;
 
@@ -11,9 +11,19 @@ public class DataSourceConfiguration {
 
     @Bean
     public DataSource dataSource() {
-        BasicDataSource basicDataSource = new BasicDataSource();
-        basicDataSource.setDriverClassName("org.hsqldb.jdbcDriver");
-        basicDataSource.setUrl("jdbc:hsqldb:mem:localhost");
-        return basicDataSource;
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.hsqldb.jdbcDriver");
+        dataSource.setUrl("jdbc:hsqldb:mem:localhost");
+        dataSource.setUsername("sa");
+        dataSource.setPassword("");
+        return dataSource;
+
+     /*   DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("org.h2.Driver");
+        dataSource.setUrl("dbc:h2:mem:testdb");
+        dataSource.setUsername("sa");
+        dataSource.setPassword("");*/
+
+        //return dataSource;
     }
 }

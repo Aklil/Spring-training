@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("api/employees")
+@RequestMapping("api/employees-rest")
 public class EmployeeRestController {
 
     private EmployeeService employeeService;
@@ -18,8 +18,13 @@ public class EmployeeRestController {
       this.employeeService = employeeService;
     }
 
-    @GetMapping("/")
+    @GetMapping(value = {"","/"})
     public List<Employee> getEmployees(){
         return employeeService.getEmployees();
+    }
+
+    @GetMapping("/countries")
+    public List<Object> getCountries(){
+        return employeeService.getCountriesFromExternalApi();
     }
 }

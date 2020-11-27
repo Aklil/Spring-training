@@ -10,4 +10,6 @@ public interface EmployeeService {
     public void createOrUpdate(Employee employee);
 
     void deleteEmployee(long id);
+
+    List<Object> getCountriesFromExternalApi();
 }

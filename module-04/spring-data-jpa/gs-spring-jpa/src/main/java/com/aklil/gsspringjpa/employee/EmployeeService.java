@@ -19,7 +19,17 @@ public class EmployeeService {
 
     public void saveEmployee(Employee employee){
         this.repository.save(employee);
+
+
+
+        //this.repository.save(employee);
     }
+
+    //step 1: valid
+    // step 2: invalid
+    // step 3: transactional
+
+
 
 
 }

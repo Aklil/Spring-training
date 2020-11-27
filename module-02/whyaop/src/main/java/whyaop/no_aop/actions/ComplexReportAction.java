@@ -1,14 +1,14 @@
 package whyaop.no_aop.actions;
 
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.bls.ComplexReportFormatter;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.bls.ComplexReportProvider;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.bls.ComplexReportRepository;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.ds.FormattedReport;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.ds.Report;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.logger.PerformanceLogger;
-import com.spring.professional.exam.tutorial.module02.question01.no.aop.logger.PerformanceLogger.PerformanceLoggerInfo;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import whyaop.no_aop.bls.ComplexReportFormatter;
+import whyaop.no_aop.bls.ComplexReportProvider;
+import whyaop.no_aop.bls.ComplexReportRepository;
+import whyaop.no_aop.ds.FormattedReport;
+import whyaop.no_aop.ds.Report;
+import whyaop.no_aop.logger.PerformanceLogger;
 
 @Component
 public class ComplexReportAction {
@@ -23,7 +23,7 @@ public class ComplexReportAction {
     private PerformanceLogger performanceLogger;
 
     public void perform() throws InterruptedException {
-        PerformanceLoggerInfo performanceLoggerInfo;
+        PerformanceLogger.PerformanceLoggerInfo performanceLoggerInfo;
 
         performanceLoggerInfo = performanceLogger.start("complexReportProvider.getReport()");
         Report report = complexReportProvider.getReport();

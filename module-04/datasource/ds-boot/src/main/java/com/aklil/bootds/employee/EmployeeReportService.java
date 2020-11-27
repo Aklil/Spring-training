@@ -1,6 +1,5 @@
-package com.spring.professional.exam.tutorial.module03.question02.boot.service;
+package com.aklil.bootds.employee;
 
-import com.spring.professional.exam.tutorial.module03.question02.boot.dao.EmployeeDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,13 +7,29 @@ import org.springframework.stereotype.Service;
 public class EmployeeReportService {
 
     @Autowired
-    private EmployeeDao employeeDao;
+    private EmployeeRepository employeeRepository;
 
     public void printReport() {
         System.out.println("Employee Report Start");
 
-        employeeDao.findEmployeeEmails()
+        System.out.println("Employees List");
+        employeeRepository.findEmployees()
                 .forEach(System.out::println);
+
+        System.out.println("Employees Average Salary Calculated Row by Row");
+        System.out.println(employeeRepository.findAverageSalaryRowByRow());
+
+        System.out.println("Employees Average Salary Calculated on Entire Result Set");
+        System.out.println(employeeRepository.findAverageSalaryCalculatedOnEntireResultSet());
+
+        System.out.println("Employees Average Salary with streams");
+        System.out.println(employeeRepository.findAverageSalaryModernImplementation());
+
+        System.out.println("Employees Average Salary sql level");
+        System.out.println(employeeRepository.findAverageSalarySqlLevel());
+
+        System.out.println("Employee found based on email");
+        System.out.println(employeeRepository.findEmployeeIdFromEmail("Jayvon.Grant@corp.com"));
 
         System.out.println("Employee Report Stop");
     }

@@ -25,11 +25,8 @@ public class EmployeeController {
     }
 
 
-    @GetMapping({"","/"})
+    @GetMapping({"","/", "/index", "/index/"})
     public String index(Model model){
-
-        //String indexPageMessage = "Hello MVC";
-        //model.addAttribute("message", indexPageMessage);
 
         var employees = employeeService.getEmployees();
 
@@ -38,7 +35,7 @@ public class EmployeeController {
         return "employees/employees";
     }
 
-    @GetMapping({"/add", "/edit/{id}"})
+   @GetMapping({"/add", "/edit/{id}"})     //  http://localhost/employees/edit/5
     public String addEditEmployee(@PathVariable("id")Optional<Long> id, Model model){
 
         if (id.isPresent()) {
@@ -48,6 +45,19 @@ public class EmployeeController {
             model.addAttribute("employee", new Employee());
         }
 
+        return "employees/add-edit";
+    }
+
+    @GetMapping("/add")
+    public String addEmployee(Model model){
+        model.addAttribute("employee", new Employee());
+        return "employees/add-edit";
+    }
+
+    @GetMapping("/edit{id}")
+    public String editEmployee(@PathVariable("id") long id, Model model){
+        Employee employee = employeeService.getEmployeeById(id).get();
+        model.addAttribute("employee", employee);
         return "employees/add-edit";
     }
 

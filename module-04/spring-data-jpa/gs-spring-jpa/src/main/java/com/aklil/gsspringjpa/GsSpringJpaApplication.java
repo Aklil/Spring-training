@@ -2,6 +2,7 @@ package com.aklil.gsspringjpa;
 
 import com.aklil.gsspringjpa.employee.Employee;
 import com.aklil.gsspringjpa.employee.EmployeeRepository;
+import com.aklil.gsspringjpa.employee.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,9 @@ public class GsSpringJpaApplication implements CommandLineRunner {
 	@Autowired
 	EmployeeRepository repository;
 
+	@Autowired
+	EmployeeService service;
+
 	public static void main(String[] args) {
 		SpringApplication.run(GsSpringJpaApplication.class, args);
 	}
@@ -26,8 +30,8 @@ public class GsSpringJpaApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		logger.info("=== save employees");
-		repository.save(new Employee("Jack", "Bauer"));
-		repository.save(new Employee("Mat", "Damon"));
+		service.saveEmployee(new Employee("Denzel", "Washington"));
+		//repository.save(new Employee("Mat", "Damon"));
 
 		logger.info("=== fetching all employees");
 		List<Employee> employees = (List<Employee>) repository.findAll();

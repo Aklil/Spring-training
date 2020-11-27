@@ -1,4 +1,4 @@
-package com.spring.professional.exam.tutorial.module03.question04.jdbc.callbacks.ds;
+package com.aklil.bootds.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -18,3 +18,5 @@ public class Employee {
     private Date hireDate;
     private float salary;
 }
+
+

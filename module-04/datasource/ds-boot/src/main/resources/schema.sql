@@ -8,3 +8,10 @@ create table employee
     hire_date    date,
     salary       int
 );
+
+create table customer
+(
+    id  int,
+    name varchar(32),
+    tin varchar(16)
+);

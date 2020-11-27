@@ -7,7 +7,7 @@ public class Runner {
     public static void main(String[] args) {
         var context = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
-        context.registerShutdownHook();
+        //context.registerShutdownHook();
 
         System.out.println("Active Profile: " + context.getEnvironment().getActiveProfiles()[0]);
 
